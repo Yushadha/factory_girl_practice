@@ -1,0 +1,10 @@
+<h1>All Questions</h1>
+
+<% @question.each do |q| %>
+ <%#= link_to q.title, question_path(q) %>
+ <h2><%= link_to q.title, q %></h2>
+ <p><%= q.body %></p>
+ <p>View Count: <%= q.view_count %></p>
+
+ <hr>
+ <% end %>
