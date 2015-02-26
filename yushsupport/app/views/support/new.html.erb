@@ -1,0 +1,33 @@
+<% if @support.errors.any? %>
+	<ul>
+		<% @support.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @support do |f| %>
+	<%= f.label :contact_name %>
+	<%= f.text_field :contact_name %>
+	<br>
+	<%= f.label :contact_email %>
+	<%= f.text_field :contact_email %>
+	<br>
+	<%= f.label :department %>
+	<%= f.number_field :department %>
+	<br>
+
+
+----------------
+	<%= f.label :due_date %>
+	<%= f.datetime_local_field :due_date %>
+	<br>
+	<%= f.label :task %>
+	<%= f.text_field :task %>
+	<br>
+	<%= f.label :person %>
+	<%= f.text_field :person %>
+	<br>
+	<%= f.submit %>
+	<%= f.button "Reset", type: :reset %>
+<% end %>

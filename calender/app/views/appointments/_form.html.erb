@@ -1,0 +1,27 @@
+<% if @appointment.errors.any? %>
+	<ul>
+		<% @appointment.errors.full_messages.each do |msg| %>
+			<li><%= msg %></li>
+		<% end %>
+	</ul>
+<% end %>
+
+<%= form_for @appointment do |f| %>
+	<%= f.label :due_date %>
+	<%= f.datetime_local_field :due_date %>
+	<br>
+	<%= f.label :duration %>
+	<%= f.number_field :duration %>
+	<br>
+	<%= f.label :task %>
+	<%= f.text_field :task %>
+	<br>
+	<%= f.label :details %>
+	<%= f.text_area :details %>
+	<br>
+	<%= f.label :person %>
+	<%= f.text_field :person %>
+	<br>
+	<%= f.submit %>
+	<%= f.button "Reset", type: :reset %>
+<% end %>

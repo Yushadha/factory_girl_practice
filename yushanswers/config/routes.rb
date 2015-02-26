@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # get "questions/new" => "questions#new", as: :new_question
   # post "/question" => "questions#create", as: :questions
   # get "questions/:id" => "questions#show", as: :question
-  # get "/question" => "questions#index" #as: :question is the path as it was defined with another verb above
+  # get "/questions" => "questions#index" #as: :question is the path as it was defined with another verb above
   # get "questions/:id/edit" => "questions#edit", as: :edit_question
   # patch "/questions/:id" => "questions#update"
   # delete "/questions/:id/" => "questions#destroy"

@@ -1,0 +1,19 @@
+	<%= form_for @support_request do |f| %>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+		<br>
+		<%= f.label :email %>
+		<%= f.text_field :email %>
+		<br>
+		<%= f.label :department %>
+		<br>
+			<% SupportRequest::DEPARTMENTS.each do |sr| %>
+			<%= f.radio_button :department, sr %>
+			<%= f.label sr %>
+			<% end %>
+		<br>
+		<%= f.label :message %>
+		<%= f.text_area :message %>
+		<br>
+		<%= f.submit %>
+	<%end%>

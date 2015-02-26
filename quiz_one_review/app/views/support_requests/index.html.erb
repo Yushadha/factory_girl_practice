@@ -1,0 +1,34 @@
+
+
+<div class = "container">
+	<h1>All Support Requests</h1>
+
+	<table>
+		<tr>
+			<th>name</th>
+			<th>email</th>
+			<th>deparment</th>
+			<th>message</th>
+			<th>actions<th>
+		</tr>
+		<tr class= "well">
+		<% @support_requests.each do |support_request| %>
+			<td class= "container"><%= support_request.name %></td>
+			<td class= "container"><%= mail_to support_request.email %></td>
+			<td class= "container"><%= support_request.department %></td>
+			<td class= "container"><%= support_request.message %></td>
+			<td class= "container"><%= link_to "edit", edit_support_request_path(support_request) %></td>
+			<td class= "container"><%= link_to "delete", support_request_path(support_request), method: :delete %></td>
+			<td class= "container">
+				<% if support_request.done? %>
+				<%= link_to "Done", support_request_path(support_request, support_request: { done: false}), method: :patch %>
+				<% else %>
+				<%= link_to "Undone", support_request_path(support_request, support_request: { done: true}), method: :patch %>
+			
+			<% end %>
+			</td>
+		</tr>
+		
+		<% end %>
+	</table>
+</div>

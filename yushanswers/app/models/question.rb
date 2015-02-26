@@ -1,6 +1,7 @@
 require "Time"
 
 class Question < ActiveRecord::Base
+
 	validates :title, presence: true, uniqueness: true
 	validates :body, presence: {message: "must be provided"}
 

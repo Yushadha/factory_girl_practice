@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  due_date: 2015-01-15 14:06:53
+  duration: 1
+  task: MyString
+  details: MyText
+  person: MyString
+
+two:
+  due_date: 2015-01-15 14:06:53
+  duration: 1
+  task: MyString
+  details: MyText
+  person: MyString

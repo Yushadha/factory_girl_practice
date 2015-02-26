@@ -1,0 +1,13 @@
+<h1> Welcome to Awesome Calender App</h1>
+
+	<% @appointments.each do |appointment| %>
+		<p>Date: <%= appointment.due_date %></p>
+		<p>Task: <%= appointment.task %></p>
+		<p>Duration: <%= appointment.duration %> Minutes</p>
+		<p>Details: <%= appointment.details %></p>
+		<p>Person: <%= appointment.person %></p>
+		<p><%= link_to "Edit", edit_appointment_path(appointment) %>
+		<%= link_to  "Delete", appointment_path(appointment), method: :delete, data: {confirm: "Are you sure"} %>
+		</p>
+		<hr>
+	<% end %>
